@@ -113,17 +113,17 @@ const FlightBooking = () => {
 
   useEffect(() => {
     moveEmojiToSeat(currentSeat);
-    let innerTimeoutId;
+    // let innerTimeoutId;
     const timeout = setTimeout(() => {
       selectedOrders.forEach(order => {
         database.put({ ...order, delivered: true });
       });
-      innerTimeoutId = setTimeout(() => {
-        const randomDoc = orders.docs[Math.floor(Math.random() * orders.docs.length)];
-        if (!randomDoc) return;
-        const randomSeat = randomDoc.seat;
-        setSeat(randomSeat);
-      }, Math.floor(Math.random() * 9000) + 5000);
+      // innerTimeoutId = setTimeout(() => {
+      //   const randomDoc = orders.docs[Math.floor(Math.random() * orders.docs.length)];
+      //   if (!randomDoc) return;
+      //   const randomSeat = randomDoc.seat;
+      //   setSeat(randomSeat);
+      // }, Math.floor(Math.random() * 9000) + 5000);
     }, 1000);
     return () => {
       clearTimeout(timeout);
