@@ -1,0 +1,56 @@
+.app {
+  text-align: center;
+  
+  
+  
+}
+
+.app-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  user-select: none;
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For IE10+/Edge */
+}
+
+.app-container {
+  width: 100vw;
+  max-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.top-controls {
+  margin-bottom: 20px;
+  /* Add any specific styles for top controls */
+}
+
+.pattern-set {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  #root {
+    align-items: normal !important;
+  }
+  .pattern {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .instrument-button {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .beat-buttons {
+    flex-wrap: wrap;
+  }
+
+  .beat-group {
+    width: 50%;
+    box-sizing: border-box;
+  }
+}

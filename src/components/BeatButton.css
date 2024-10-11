@@ -1,0 +1,51 @@
+:root {
+  --beat-inactive: #FF8C42;
+  --beat-active: #FFA500;
+  --beat-current: #FFD700;
+}
+
+[data-theme="dark"] {
+  --beat-inactive: #FF6B35;
+  --beat-active: #FF8C42;
+  --beat-current: #FFA500;
+}
+
+.beat-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.beat-button::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.beat-button:not(.active)::after {
+  width: 40%;
+  height: 40%;
+  background-color: var(--beat-inactive);
+}
+
+.beat-button.active::after {
+  background-color: var(--beat-active);
+}
+
+.beat-button.current {
+  box-shadow: 0 0 0 3px var(--beat-current);
+}
+
+/* Ensure active beats stand out */
+.beat-button.active::after {
+  background-color: var(--beat-active) !important;
+}
