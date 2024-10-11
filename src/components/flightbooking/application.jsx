@@ -116,7 +116,7 @@ const FlightBooking = () => {
     // let innerTimeoutId;
     const timeout = setTimeout(() => {
       selectedOrders.forEach(order => {
-        database.put({ ...order, delivered: true });
+        database.put({ ...order, delivered: true, createdAt: Date.now() });
       });
       // innerTimeoutId = setTimeout(() => {
       //   const randomDoc = orders.docs[Math.floor(Math.random() * orders.docs.length)];
