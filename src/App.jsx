@@ -38,7 +38,16 @@ function partykitS3({ name, blockstore }, partyHost, refresh) {
 
 function App() {
 
-  const firstPathSegment = document.location.pathname.split('/')[1];  
+  const firstPathSegment = document.location.pathname.split('/')[1];
+
+  useEffect(() => {
+    if (!firstPathSegment) {
+      const randomString = Math.random().toString().substring(2, 6);
+      window.location.replace(`/FP${randomString}`);
+    }
+  }, [firstPathSegment]);
+
+  
   const dbName = (import.meta.env.VITE_DBNAME || 'flt-sv') + (firstPathSegment ? '-' + firstPathSegment : '');
   
   const { database, useLiveQuery } = useFireproof(dbName);
